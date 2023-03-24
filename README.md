@@ -1,4 +1,4 @@
-### SETTING UP THE PROJECT
+# SETTING UP THE PROJECT
 
 - If you have docker installed, make sure you are in the same directory as the ```docker-compose.yml``` file and run ```docker-compose up --build```.
 
@@ -20,5 +20,5 @@
     * Update the ```EMAIL_USER, EMAIL_PASS, EMAIL_SERVICE``` with the approraite details
     * Comment out line ```103 to 111```  and lines ```168 to 174``` in auth.route.js file in the routes folder
 
-### ADDITIONAL TIME
+# ADDITIONAL TIME
 - If I had additional time, I would have written some test cases for some features.
