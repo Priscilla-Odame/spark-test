@@ -95,7 +95,10 @@ Content-Type: application/json
 Authorization: Basic cildnkoton@gmail.com newpass
 
 {
-    "role": "Admin"
+    "role": "ADMIN",
+    "city": "Accra",
+    "street_address": "Osu 2",
+    "state": "Greater Accra"
 }
 
 
