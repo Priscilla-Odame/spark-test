@@ -2,7 +2,7 @@
 
 - If you have docker installed, make sure you are in the same directory as the ```docker-compose.yml``` file and run ```docker-compose up --build```.
 
-- if you do not have docker installed but want to run the project using docker, follow [https://docs.docker.com/engine/install/]here to install it.
+- if you do not have docker installed but want to run the project using docker, follow [https://docs.docker.com/engine/install/] here to install it.
 
 - If you do not want to user docker, follow the following steps:
     * Create a .env with variable names such as the ones in .env.api file
