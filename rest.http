@@ -1,0 +1,127 @@
+### Signup
+POST http://localhost:3000/api/v1/auth/register
+Content-Type: application/json
+
+{
+    "email": "hinev639111@dni8.com",
+    "firstname": "Test",
+    "lastname": "User",
+    "password": "usersa",
+    "country": "Canada",
+    "telephone": "02453246044"
+}
+
+### Login
+POST http://localhost:3000/api/v1/auth/login
+Content-Type: application/json
+
+{
+    "email": "hinev639111@dni8.com",
+    "password": "usersa"
+}
+
+### Create a user (Only Admin can do this) (Must be authenticated and authorized)
+POST http://localhost:3000/api/v1/auth/create-user
+Content-Type: application/json
+
+{
+    "email": "kakila8798@xegge.com",
+    "firstname": "Temp",
+    "lastname": "User",
+    "country": "Canada",
+    "telephone": "0245324673"
+}
+
+### Forgot Password
+
+POST http://localhost:3000/api/v1/auth/forgot-password
+Content-Type: application/json
+
+{
+    "email": "testuser@gmail.com",
+}
+
+### Generate access token from refresh token
+
+POST http://localhost:3000/api/v1/auth/refreshToken
+Content-Type: application/json
+
+{
+    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1ZTg5ZjlmZi03NDY3LTQwMjEtOTQ2MS02NDBlOTRkYTA5MjYiLCJ1c2VyUm9sZSI6IkNVU1RPTUVSIiwianRpIjoiNWUxZGI2OWMtZGE2Yy00ZDAyLWI0NDctYWZlZTI5ZWViYTFmIiwiaWF0IjoxNjc5NjEwMjk4LCJleHAiOjE2Nzk2MzkwOTh9.OjoUQ-WUBK1OSCm8eQM0hrYtmeouFUsONu_OTBKR-_o"
+}
+
+### To revoke token upon logout
+POST http://localhost:3000/api/v1/auth/revokeRefreshTokens
+Content-Type: application/json
+
+{
+    "userId": "5e89f9ff-7467-4021-9461-640e94da0926"
+}
+
+### Forgot Password Form
+
+POST http://localhost:3000/api/v1/auth/forgot-password
+Content-Type: application/json
+
+{
+    "email": "geyoto9315@loongwin.com"
+}
+
+### Reset Password
+PATCH http://localhost:3000/api/v1/auth/reset-password
+Content-Type: application/json
+
+{
+    "token": "eyJhbGciOJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzlhZTliZTJhZDE2Mzc4OGI2MWNiNDkiLCJyb2xlIjoidXNlciIsImVtYWlsIjoic2lyZXZpNTk4OUBwYXh2ZW4uY29tIiwiZmlyc3RuYW1lIjoiTmV3IiwianRpIjoiMTIwNjI1NjQtYWVkZi00YTk5LWIzZGMtZmRiMGViZDhjMzdjIiwiaWF0IjoxNjcxMTE2MzcxLCJleHAiOjE2NzExNDUxNzEsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6OTAwMS9hcGkvYXV0aCIsInN1YiI6IkhlbnJ5In0.R1iIltjhJDlFisQLlD4akF0-o3apOUd9pWrzKZNgdTA",
+    "newpassword": "olsennews"
+
+}
+
+### Get all users(Admins, Users and Customers)(Must be authenticated and authorized)
+GET http://localhost:3000/api/v1/users
+
+
+### Get all customers(Must be authenticated and authorized)
+GET http://localhost:3000/api/v1/users/customers/all
+
+
+### Get a particular user(Can be customer, admin or user)(Must be authenticated and authorized)
+GET http://localhost:3000/api/v1/users/ab6d331b-0769-470d-a7a6-00122173aa90
+
+
+### Update a particular user(Can be customer, admin or user)(Must be authenticated and authorized)
+PATCH http://localhost:3000/api/v1/users/f1fef197-e440-47a3-bbd7-50e0830300c5
+Content-Type: application/json
+Authorization: Basic cildnkoton@gmail.com newpass
+
+{
+    "role": "Admin"
+}
+
+
+### Update currently logged in user's password(Can be customer, admin or user)(Must be authenticated)
+PATCH http://localhost:3000/api/v1/users/profile/changepassword
+Content-Type: application/json
+
+{
+    "oldpassword": "usersa",
+    "newpassword":"newpass"
+}
+
+### Update currently logged in user's profile(Must be authenticated)
+PATCH http://localhost:3000/api/v1/users/profile/update
+Content-Type: application/json
+
+{
+    "email": "kakila8798@xegge.com",
+}
+
+### Get currently logged in user's details(Can be customer, admin or user)(Must be authenticated)
+GET http://localhost:3000/api/v1/users/profile/details
+Content-Type: application/json
+
+### Delete a particular user(Can be customer, admin or user)(Must be authenticated and authorized)
+DELETE http://localhost:3000/api/v1/users/66d36152-161e-4af0-8077-e0bafaf47c1d
+
+### Get report on customers(Must be authenticated and authorized)
+GET http://localhost:3000/api/v1/report/customer
